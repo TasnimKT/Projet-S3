@@ -68,9 +68,24 @@ print(MoyUe1)
 print(MoyUe2)
 print(MoyUe3)
 print(MoyUe4)
-#------------------------------------------------------------------------------------------------------------------
-nbeUe1 = 0
-nbeUe2 = 0
-nbeUe3 = 0
-nbeUe4 = 0
+#--------------------------------------XP Fonctio nb ex-------------------------------------------------------------
 
+
+xP = []
+Moyenn = []
+for POP in range(len(lastt)):
+    a = my_list[POP][0]+my_list[POP][1]+my_list[POP][2]+my_list[POP][3]
+    Moyenn.append(a/4)
+n=0
+a=0
+while a<len(Moyenn)-1:           #ordonne la liste
+    a = 0
+    for n in range(len(Moyenn)-1):
+        if Moyenn[n] > Moyenn[n+1]:
+            p = Moyenn[n]
+            Moyenn[n] = Moyenn[n+1]
+            Moyenn[n+1] = p
+        else:
+            a =a+1
+print(Moyenn)
+#plt.hist(Moyenn,2)
