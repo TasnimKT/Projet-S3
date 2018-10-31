@@ -1,5 +1,5 @@
 import csv
-
+import matplotlib.pyplot as plt
 with open('donnees_projet', 'r') as f:  #import les donnees
     reader = csv.reader(f)
     your_list = list(reader)
@@ -88,4 +88,29 @@ while a<len(Moyenn)-1:           #ordonne la liste
         else:
             a =a+1
 print(Moyenn)
-#plt.hist(Moyenn,2)
+plt.hist(Moyenn,2)
+#------------------------------------------test nom-----------------------------------------------------------------
+#liste de nom de longeur 99
+list_nom = ("a1","z1","e1","r1","t1","y1","u1","i1","o1","a2","z2","e2","r2","t2","y2","u2","i2","o2","a3","z3","e3","r3","t3","y3","u3","i3","o3","a4","z4","e4","r4","t4","y4","u4","i4","o4","a5","z5","e5","r5","t5","y5","u5","i5","o5","a6","z6","e6","r6","t6","y6","u6","i6","o6","a7","z7","e7","r7","t7","y7","u7","i7","o7","a8","z8","e8","r8","t8","y8","u8","i8","o8","a9","z9","e9","r9","t9","y9","u9","i9","o9","a0","z0","e0","r0","t0","y0","u0","i0","o0","a","z","e","r","t","y","u","i","o")
+print(len(list_nom))
+n = 0
+ok = []
+listwname = my_list
+for n in range(len(my_list)-1):
+    listwname[n].insert(0,list_nom[n])
+print(listwname)
+#----------------------------------------demande de nom-----------------------------------------------------------
+#nom = str(input("qui tu cherche wesh ?"))
+nom = "bite"
+l = 0
+a=0
+while l < len(listwname):
+     if nom == listwname[l][0]:
+        print("il a eu :", listwname[l][1:])
+        l = len(listwname)+2
+     else:
+        l += 1
+
+if l == len(listwname):
+    print("il n'existe pas")
+#------------------------------------------------------------------------------------------------------------------
