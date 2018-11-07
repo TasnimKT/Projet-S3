@@ -14,14 +14,15 @@ def importation():
 	print(your_list)
 	return your_list
 #-----------------------------------transforme en float les valeurs max d'XP-------------------------------------------
-	
-def float_max_xp(mportation):
+#%%
+def float_max_xp(your_list):
 	l1 = []
 	for mm in range(len(your_list[0])-1):
 	    l1.append(float(your_list[0][mm]))
 	return l1
 #-----------------------------------donne le nombre de validant-----(tres sale)----------------------------------------
-def nb_valid(importation):
+#%%
+def nb_valid(your_list):
 	nb_eleve = len(your_list)-1
 	lastt = your_list[1:]
 	nb_de_valide = 0
@@ -29,10 +30,10 @@ def nb_valid(importation):
 	    if lastt[i][4] == '1.0':
 	        nb_de_valide +=1
 	print('il y a ',nb_de_valide ,'etudiants qui ont valide')
-	return nb_de_valide,lastt
+	return nb_de_valide,lastt,nb_eleve
 #-----------------------------------transforme la liste de str en liste de float---------------------------------------
-def str_to_float(nb_valid,importation):
-	jolist = []
+#%%
+def str_to_float(nb_de_valid,lastt):
 	my_list = []
 	
 	for uu in range(len(lastt)):
@@ -44,7 +45,9 @@ def str_to_float(nb_valid,importation):
 	print(my_list)
 	return my_list
 #-------------------------------------------moyenne les xp sur 100-----------------------------------------------------
-def moyenne_xp_sur_100(importation,float_max_xp):
+#%%
+def moyenne_xp_sur_100(my_list,l1):
+	jolist = []
 	for pp in range(len(my_list)):
 	    temp = []
 	    for ppp in range(len(my_list[0])-1):
@@ -53,7 +56,8 @@ def moyenne_xp_sur_100(importation,float_max_xp):
 	print(jolist)
 	return jolist
 #------------------------------------------donne les listes de note en fonction des ue---------------------------------
-def listage_ue_note(importation):
+#%%
+def listage_ue_note(your_list,my_list):
 	Ue1 = []
 	Ue2 = []
 	Ue3 = []
@@ -66,7 +70,8 @@ def listage_ue_note(importation):
 	    Ue4.append(my_list[PPPP][3])
 	return Ue1,Ue2,Ue3,Ue4
 #------------------------------------------moyenne des liste de note de chaque ue--------------------------------------
-def moyenne_list_note_ue(listage_ue_note):
+#%%
+def moyenne_list_note_ue(Ue1,Ue2,Ue3,Ue4):
 	a =0
 	b= 0
 	c=0
@@ -88,8 +93,8 @@ def moyenne_list_note_ue(listage_ue_note):
 	print(MoyUe4)
 	return MoyUe1,MoyUe2,MoyUe3,MoyUe4
 #--------------------------------------XP Fonctio nb ex-------------------------------------------------------------
-def Xp_jesaisplus(nb_valid,str_to_float):
-	xP = []
+#%%
+def Xp_jesaisplus(my_list,str_to_float,lastt):
 	Moyenn = []
 	for POP in range(len(lastt)):
 	    a = my_list[POP][0]+my_list[POP][1]+my_list[POP][2]+my_list[POP][3]

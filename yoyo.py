@@ -1,5 +1,6 @@
 import csv
 import matplotlib.pyplot as plt
+from tkinter import * 
 with open('donnees_projet', 'r') as f:  #import les donnees
     reader = csv.reader(f)
     your_list = list(reader)
@@ -100,8 +101,7 @@ for n in range(len(my_list)-1):
     listwname[n].insert(0,list_nom[n])
 print(listwname)
 #----------------------------------------demande de nom-----------------------------------------------------------
-#nom = str(input("qui tu cherche wesh ?"))
-nom = "bite"
+nom = input("qui tu cherche wesh ?")
 l = 0
 a=0
 while l < len(listwname):
