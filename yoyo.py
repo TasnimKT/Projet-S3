@@ -1,5 +1,6 @@
 import csv
 import matplotlib.pyplot as plt
+
 from tkinter import * 
 with open('donnees_projet', 'r') as f:  #import les donnees
     reader = csv.reader(f)
@@ -113,4 +114,6 @@ while l < len(listwname):
 
 if l == len(listwname):
     print("il n'existe pas")
-#------------------------------------------------------------------------------------------------------------------
+#--------------------------------INterface(test)-----------------------------------------------------------------
+root = Tk()
+root.title('Simple exemple')
