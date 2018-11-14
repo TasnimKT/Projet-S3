@@ -7,10 +7,7 @@ Created on Wed Nov  7 09:48:03 2018
 
 #from tkinter import * 
 import tkinter as tk
-def verif():
-	
-	print(entree.get())
-	return "l"
+
 def recherche ():
 	txt = canvas.create_text(75, 60, text='yo', font="Arial 16", fill="black")
 	entre = entree.get()
