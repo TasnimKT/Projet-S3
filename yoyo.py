@@ -1,6 +1,12 @@
-csv
+import csv
 import matplotlib.pyplot as plt
-import tkinter as tk 
+import tkinter as tk
+
+import matplotlib
+matplotlib.use("TkAgg")
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2TkAgg
+from matplotlib.figure import Figure
+
 with open('donnees_projet', 'r') as f:  #import les donnees
     reader = csv.reader(f)
     your_list = list(reader)
@@ -94,7 +100,7 @@ while a<len(Moyenn)-1:           #ordonne la liste
         else:
             a =a+1
 print(Moyenn)
-plt.hist(Moyenn,100)
+azerrrr = plt.hist(Moyenn,100)
 #------------------------------------------test nom-----------------------------------------------------------------
 #%%
 #liste de nom de longeur 99
@@ -146,6 +152,7 @@ def recherche ():
 		txt = display.create_text(175, azzz, text=app, font="Arial 16", fill="black")
 
 def ecriree():
+	global txt
 	ola =entree.get()
 	txt = display.create_text(175, 60, text=ola, font="Arial 20", fill="black")
 	return
@@ -168,13 +175,30 @@ entree = tk.Entry(root, textvariable=str, width=30)
 #Mes boutons (Ils appeellent des fonctions avec command="le nom de la fonction")
 BT_recherche = tk.Button(root, text='Chercher', command=recherche)
 ecc = tk.Button(root, text='ecrir', command=ecriree)
-
+ezc = tk.Button(root, text='eclrir', command=__init__)
+ezc.pack()
 
 BT_recherche.pack()
 ecc.pack()
-
 entree.pack()
 display.pack()
+
+def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="Graph Page!", font=LARGE_FONT)
+        label.pack(pady=10,padx=10)
+
+        button1 = ttk.Button(self, text="Back to Home",
+                            command=lambda: controller.show_frame(StartPage))
+        button1.pack()
+
+        canvas = FigureCanvasTkAgg(azerrrr, self)
+        canvas.show()
+        canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
+
+        toolbar = NavigationToolbar2TkAgg(canvas, self)
+        toolbar.update()
+        canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
 
 root.mainloop()
