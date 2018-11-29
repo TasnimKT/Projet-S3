@@ -1,17 +1,27 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Nov 14 14:28:25 2018
+Created on Thu Nov 29 15:16:14 2018
 
 @author: etudiant
 """
 
-z = [1,2,3,4,2,8,2]
-f = 2
-def el_compteur(a,b):
-	u=0
-	for i in range(len(a)):
-		if b == a[i]:
-			u=u+1
-	return u 
-txt = str(el_compteur(z,f))
-print("Le nombre apparaît " + txt + " fois")
+
+
+## A AJOUTER DANS FONCTION RECHERCHER
+##AFFICHER LES NOTES DANS CHAQUE DOMAINE DE LA PERSONNE RECHERCHE
+        d1 = liste_utilisablev2[pos][0]
+        d2 = liste_utilisablev2[pos][1]
+        d3 = liste_utilisablev2[pos][2]
+        d4 = liste_utilisablev2[pos][3]
+       
+        txt = nom+"a eu domaine1 ="+str(d1)+", domaine 2= "+str(d2)+ "domaine3 = "+str(d3)+ "et domaine 4 = "+str(d4)
+       
+        label = tk.Label(novv, text = txt,font=LARGE_FONT)
+        
+## AFFICHER LA MOYENNE DE L ELEVE 
+
+        a = moyenne(liste_utilisablev2(pos))
+        txta = nom+ "a eu une moyenne de" + str(a)
+        label = tk.Label(novv, texta = txt,font=LARGE_FONT)
+        label.pack()         
+
