@@ -205,7 +205,7 @@ def recherche():
 	else:
 		nop = tk.Tk()
 		nop.wm_title("!!!!")
-		labelErr = tk.Label(nop,text = "EROR 404", font = MOINS_LARGE_FONTE)
+		labelErr = tk.Label(nop,text = "ERROR 404", font = MOINS_LARGE_FONTE)
 		labelErr.pack(pady =20, padx = 25)
 		print("erreur cet eleve n'exite pas")
 			
@@ -246,10 +246,10 @@ class StartPage (tk.Frame):		#page de base(navigation)
 		tk.Frame.__init__(self, parent)
 		label = tk.Label(self,text="Bienvenue sur La Page d'acceuil !", font=MOINS_LARGE_FONTE) # def ( init)
 		label.pack(pady=10,padx=10)      #cree la fenetre
-		bouton11 = ttk.Button(self, text="Note de la classe",command=lambda: controller.show_frame(PageUne))
-		bouton11.pack()
-		bouton12 = ttk.Button(self, text="Could be ussfull",command=lambda: controller.show_frame(PageDE))
-		bouton12.pack()
+		#bouton11 = ttk.Button(self, text="Note de la classe",command=lambda: controller.show_frame(PageUne))
+		#bouton11.pack()
+		#bouton12 = ttk.Button(self, text="Could be ussfull",command=lambda: controller.show_frame(PageDE))
+		#bouton12.pack()
 		bouton13 = ttk.Button(self, text="Répartition des notes max",command=lambda: controller.show_frame(PageTROI))
 		bouton13.pack()
 		bouton14 = ttk.Button(self, text="Recherche d'élève",command=lambda: controller.show_frame(KATRE))
